@@ -31,3 +31,10 @@ export function setDrawer(value) {
     is_open: value
   }
 }
+
+export function setNavTitle(value) {
+  return {
+    type: 'SET_NAV_TITLE',
+    title: value
+  }
+}

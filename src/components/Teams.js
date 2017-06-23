@@ -3,15 +3,15 @@ import { connect } from 'react-redux'
 
 import * as actionCreators from '../store/action-creators'
 
-class Home extends React.Component {
+class Teams extends React.Component {
   componentDidMount() {
-    this.props.dispatch(actionCreators.setNavTitle('Home'))
+    this.props.dispatch(actionCreators.setNavTitle('Teams'))
   }
 
   render () {
     return (
       <div>
-        Home
+        Teams page
       </div>
     )
   }
@@ -21,6 +21,6 @@ const mapStateToProps = (state) => {
   return {}
 }
 
-const ConnectedHome = connect(mapStateToProps)(Home)
+const ConnectedTeams = connect(mapStateToProps)(Teams)
 
-export default ConnectedHome
+export default ConnectedTeams

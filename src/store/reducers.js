@@ -39,3 +39,15 @@ export function drawer(state = { is_open: false }, action) {
       return state
   }
 }
+
+export function navbar(state = { title: '' }, action) {
+  switch (action.type) {
+    case 'SET_NAV_TITLE':
+      return {
+        ...state,
+        title: action.title
+      }
+    default:
+      return state
+  }
+}

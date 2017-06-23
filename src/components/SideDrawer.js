@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { withRouter } from 'react-router-dom'
 import * as actionCreators from '../store/action-creators'
 
 import Drawer from 'material-ui/Drawer'
@@ -11,7 +11,8 @@ class SideDrawer extends Component {
     this.props.dispatch(actionCreators.setDrawer(open))
   }
 
-  handleClose() {
+  changePage(page) {
+    this.props.history.push(page)
     this.onRequestChange(false)
   }
 
@@ -23,14 +24,14 @@ class SideDrawer extends Component {
         open={this.props.is_open}
         onRequestChange={(open) => this.onRequestChange(open)}
       >
-        <MenuItem onTouchTap={() => this.handleClose()}>
+        <MenuItem onTouchTap={() => this.changePage('/')}>
+          Home
+        </MenuItem>
+        <MenuItem onTouchTap={() => this.changePage('/teams')}>
           Teams
         </MenuItem>
-        <MenuItem onTouchTap={() => this.handleClose()}>
+        <MenuItem onTouchTap={() => this.changePage()}>
           Calendar
-        </MenuItem>
-        <MenuItem onTouchTap={() => this.handleClose()}>
-          History
         </MenuItem>
       </Drawer>
     );
@@ -45,4 +46,4 @@ const mapStateToProps = (state) => {
 
 const ConnectedSideDrawer = connect(mapStateToProps)(SideDrawer)
 
-export default ConnectedSideDrawer
+export default withRouter(ConnectedSideDrawer)

@@ -12,7 +12,7 @@ class NavBar extends Component {
   render() {
     return (
       <AppBar
-        title="Teams"
+        title={this.props.title}
         iconClassNameRight="muidocs-icon-navigation-expand-more"
         onLeftIconButtonTouchTap={() => this.openDrawer()}
       />
@@ -21,7 +21,9 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return {
+    title: state.navbar.title
+  }
 }
 
 const ConnectedNavBar = connect(mapStateToProps)(NavBar)
