@@ -11,7 +11,7 @@ class Home extends React.Component {
     this.props.dispatch(actionCreators.setTime(value))
   }
   render () {
-    var { frozen, time, reduxState } = this.props
+    var { frozen, time } = this.props
     var attrs = {}
     const DELAY = 500 // in ms
 
@@ -23,7 +23,6 @@ class Home extends React.Component {
 
     return (
       <div>
-        <h1>Provider and connect example</h1>
         <span>
           <b>What time is it?</b> { time ? `It is currently ${time}` : 'No idea yet...' }
         </span>
@@ -35,19 +34,15 @@ class Home extends React.Component {
         <br />
         <button { ...attrs } onClick={() => this.onTimeButtonClick(DELAY)}>Get time!</button>
         <button { ...attrs } onClick={() => this.onTimeButtonClick2('Hey')}>Set time!</button>
-        <pre>
-          redux state = { JSON.stringify(reduxState, null, 2) }
-        </pre>
       </div>
     )
   }
 }
 
-const mapStateToProps = (state/*, props*/) => {
+const mapStateToProps = (state) => {
   return {
     frozen: state._time.frozen,
-    time: state._time.time,
-    reduxState: state,
+    time: state._time.time
   }
 }
 

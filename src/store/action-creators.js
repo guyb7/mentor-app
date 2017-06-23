@@ -24,3 +24,10 @@ export function setTime(value) {
     time: value
   }
 }
+
+export function setDrawer(value) {
+  return {
+    type: 'SET_DRAWER',
+    is_open: value
+  }
+}

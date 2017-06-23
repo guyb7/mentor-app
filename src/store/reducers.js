@@ -1,8 +1,6 @@
 var initialTimeState = {}
 
 export function _time(state = initialTimeState, action) {
-  console.log('_time reducer called with state ', state , ' and action ', action);
-
   switch (action.type) {
     case 'GET_TIME_REQUEST':
       return {
@@ -24,6 +22,18 @@ export function _time(state = initialTimeState, action) {
       return {
         ...state,
         time: action.time
+      }
+    default:
+      return state
+  }
+}
+
+export function drawer(state = { is_open: false }, action) {
+  switch (action.type) {
+    case 'SET_DRAWER':
+      return {
+        ...state,
+        is_open: action.is_open
       }
     default:
       return state
