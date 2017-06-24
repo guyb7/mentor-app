@@ -51,3 +51,25 @@ export function navbar(state = { title: '' }, action) {
       return state
   }
 }
+
+export function teams(state = { is_loading: false, data: {} }, action) {
+  switch (action.type) {
+    case 'LOAD_TEAMS_REQUEST':
+      return {
+        ...state,
+        is_loading: true
+      }
+    case 'LOAD_TEAMS_FAILURE':
+      return {
+        ...state,
+        is_loading: false
+      }
+    case 'LOAD_TEAMS_SUCCESS':
+      return {
+        ...state,
+        data: action.result.teams
+      }
+    default:
+      return state
+  }
+}

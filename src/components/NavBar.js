@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import AppBar from 'material-ui/AppBar'
 
 import * as actionCreators from '../store/action-creators'
+
+import AppBar from 'material-ui/AppBar'
+import Avatar from 'material-ui/Avatar'
 
 class NavBar extends Component {
   openDrawer() {
@@ -13,8 +15,8 @@ class NavBar extends Component {
     return (
       <AppBar
         title={this.props.title}
-        iconClassNameRight="muidocs-icon-navigation-expand-more"
         onLeftIconButtonTouchTap={() => this.openDrawer()}
+        iconElementRight={<Avatar size={30}>Y</Avatar>}
       />
     );
   }

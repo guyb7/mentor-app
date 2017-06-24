@@ -7,10 +7,11 @@ import {
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Home from './components/Home'
-import Teams from './components/Teams'
 import NavBar from './components/NavBar'
 import SideDrawer from './components/SideDrawer'
+import Home from './components/Home'
+import Teams from './components/Teams'
+import TeamEdit from './components/TeamEdit'
 
 class App extends Component {
   render() {
@@ -22,7 +23,8 @@ class App extends Component {
               <NavBar />
               <SideDrawer />
               <Route exact path="/" component={Home}/>
-              <Route path="/teams" component={Teams}/>
+              <Route exact path="/teams" component={Teams}/>
+              <Route path="/teams/:id" component={TeamEdit}/>
             </div>
           </Router>
         </MuiThemeProvider>
