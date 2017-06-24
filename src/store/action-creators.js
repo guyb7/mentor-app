@@ -80,9 +80,9 @@ export function loadTeams() {
               'google': {
                 id: 'google',
                 name: 'Google',
-                emails: ['lp@google.com'],
+                emails: ['larry@google.com', 'sergey@google.com'],
                 pitch: 'Search engine',
-                keywords: ['Search'],
+                keywords: ['Search', 'Advertisement'],
                 logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/120px-Google_%22G%22_Logo.svg.png',
                 notes_private: '',
                 notes_public: ''
